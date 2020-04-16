@@ -1,0 +1,261 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.1.245/W32 for ARM                  16/Apr/2020  19:18:39
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Exe\Lab01.out
+#    Map file     =
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\List\Lab01.map
+#    Command line =
+#        -f C:\Users\Lucas\AppData\Local\Temp\EWBB1D.tmp
+#        (C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Obj\main.o
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Obj\startup_TM4C1294.o
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Obj\system_TM4C1294_TW.o
+#        --no_out_extension -o
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Exe\Lab01.out
+#        --map
+#        C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\List\Lab01.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x3c0
+  .intvec            ro code          0x0   0x3c0  startup_TM4C1294.o [1]
+                                  - 0x3c0   0x3c0
+
+"P1":                                       0x8b8
+  .text              ro code        0x3c0   0x254  sysctl.o [3]
+  .rodata            const          0x614   0x1b0  sysctl.o [3]
+  .text              ro code        0x7c4   0x134  xprintftiny.o [2]
+  .text              ro code        0x8f8    0x36  strlen.o [4]
+  .text              ro code        0x92e    0x2e  copy_init3.o [4]
+  .rodata            const          0x95c    0x6c  sysctl.o [3]
+  .text              ro code        0x9c8    0x50  iarttio.o [5]
+  .text              ro code        0xa18     0x8  XShttio.o [2]
+  .text              ro code        0xa20    0x24  XShttio.o [2]
+  .text              ro code        0xa44    0x14  XShttio.o [2]
+  .rodata            const          0xa58    0x30  sysctl.o [3]
+  .text              ro code        0xa88    0x2c  iarttio.o [5]
+  .text              ro code        0xab4    0x28  printf.o [2]
+  .text              ro code        0xadc    0x28  data_init.o [4]
+  .text              ro code        0xb04    0x22  iarwrite.o [5]
+  .iar.init_table    const          0xb28    0x14  - Linker created -
+  .text              ro code        0xb3c     0x2  startup_TM4C1294.o [1]
+  .text              ro code        0xb40    0x20  system_TM4C1294_TW.o [1]
+  .text              ro code        0xb60    0x20  putchar.o [2]
+  .text              ro code        0xb80    0x10  write.o [5]
+  .text              ro code        0xb90    0x1e  dwrite.o [5]
+  .text              ro code        0xbae    0x20  iarwstd.o [5]
+  .text              ro code        0xbd0    0x1e  cmain.o [4]
+  .text              ro code        0xbee     0x4  low_level_init.o [2]
+  .text              ro code        0xbf4    0x10  main.o [1]
+  .text              ro code        0xc04     0x4  exit.o [2]
+  .text              ro code        0xc08     0xa  cexit.o [4]
+  .text              ro code        0xc14    0x14  exit.o [5]
+  .text              ro code        0xc28    0x16  xprout.o [2]
+  .text              ro code        0xc40    0x14  startup_TM4C1294.o [1]
+  .rodata            const          0xc54     0xc  main.o [1]
+  .text              ro code        0xc60     0xc  cstartup_M.o [4]
+  Initializer bytes  const          0xc6c     0xc  <for P2-1>
+  .rodata            const          0xc78     0x0  copy_init3.o [4]
+                                  - 0xc78   0x8b8
+
+"P2", part 1 of 2:                            0xc
+  P2-1                        0x2000'0000     0x9  <Init block>
+    .data            inited   0x2000'0000     0x8  XShttio.o [2]
+    .bss             inited   0x2000'0008     0x1  XShttio.o [2]
+                            - 0x2000'0009     0x9
+
+"P2", part 2 of 2:                         0x8004
+  .noinit            uninit   0x2000'000c     0x4  system_TM4C1294_TW.o [1]
+  CSTACK                      0x2000'0010  0x8000  <Block>
+    CSTACK           uninit   0x2000'0010  0x8000  <Block tail>
+                            - 0x2000'8010  0x8004
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xc78     0xf'ffff  0xf'f388
+  0x2000'8010  0x2003'ffff  0x3'7ff0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0xc (133% of destination):
+                0xc6c   0xc
+    1 destination range, total size 0x9:
+          0x2000'0000   0x9
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+command line/config:
+    -----------------------------------------------
+    Total:
+
+C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Obj: [1]
+    main.o                     16       12
+    startup_TM4C1294.o        982
+    system_TM4C1294_TW.o       32                 4
+    -----------------------------------------------
+    Total:                  1'030       12        4
+
+dl7M_tln.a: [2]
+    XShttio.o                  64        9        9
+    exit.o                      4
+    low_level_init.o            4
+    printf.o                   40
+    putchar.o                  32
+    xprintftiny.o             308
+    xprout.o                   22
+    -----------------------------------------------
+    Total:                    474        9        9
+
+driverlib.a: [3]
+    sysctl.o                  596      588
+    -----------------------------------------------
+    Total:                    596      588
+
+rt7M_tl.a: [4]
+    cexit.o                    10
+    cmain.o                    30
+    copy_init3.o               46
+    cstartup_M.o               12
+    data_init.o                40
+    strlen.o                   54
+    -----------------------------------------------
+    Total:                    192
+
+shb_l.a: [5]
+    dwrite.o                   30
+    exit.o                     20
+    iarttio.o                 124
+    iarwrite.o                 34
+    iarwstd.o                  32
+    write.o                    16
+    -----------------------------------------------
+    Total:                    256
+
+    Gaps                       10        2
+    Linker created                      23   32'768
+---------------------------------------------------
+    Grand Total:            2'558      634   32'781
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xb28          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xb3c          --   Gb  - Linker created -
+?main                         0xbd1         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'8010          --   Gb  - Linker created -
+Region$$Table$$Base           0xb28          --   Gb  - Linker created -
+Region$$Table$$Limit          0xb3c          --   Gb  - Linker created -
+SysCtlClockFreqSet            0x3e1  0x1fc  Code  Gb  sysctl.o [3]
+SystemCoreClock         0x2000'000c    0x4  Data  Gb  system_TM4C1294_TW.o [1]
+SystemInit                    0xb41   0x10  Code  Gb  system_TM4C1294_TW.o [1]
+_PrintfTiny                   0x7dd  0x11c  Code  Gb  xprintftiny.o [2]
+_Prout                        0xc29   0x16  Code  Gb  xprout.o [2]
+_SysCtlMemTimingGet           0x3c1   0x20  Code  Lc  sysctl.o [3]
+__Vectors                       0x0          --   Gb  startup_TM4C1294.o [1]
+__Vectors_End                 0x3c0         Data  Gb  startup_TM4C1294.o [1]
+__Vectors_Size {Abs}          0x3c0          --   Gb  startup_TM4C1294.o [1]
+__cmain                       0xbd1         Code  Gb  cmain.o [4]
+__dwrite                      0xb91   0x1e  Code  Gb  dwrite.o [5]
+__exit                        0xc15   0x14  Code  Gb  exit.o [5]
+__iar_close_ttio              0xa89   0x2c  Code  Wk  iarttio.o [5]
+__iar_copy_init3              0x92f   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3              0xadd   0x28  Code  Gb  data_init.o [4]
+__iar_get_ttio                0x9c9   0x4c  Code  Gb  iarttio.o [5]
+__iar_init_vfp                0xc49         Code  Wk  startup_TM4C1294.o [1]
+__iar_lookup_ttioh            0xa19    0x8  Code  Gb  XShttio.o [2]
+__iar_program_start           0xc61         Code  Gb  cstartup_M.o [4]
+__iar_sh_stdout               0xbaf   0x20  Code  Gb  iarwstd.o [5]
+__iar_sh_write                0xb05   0x22  Code  Gb  iarwrite.o [5]
+__iar_ttio_guard_lock         0xa21   0x24  Code  Wk  XShttio.o [2]
+__iar_ttio_guard_unlock
+                              0xa45   0x14  Code  Wk  XShttio.o [2]
+__iar_ttio_handles      0x2000'0000    0x8  Data  Lc  XShttio.o [2]
+__low_level_init              0xbef    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  startup_TM4C1294.o [1]
+__vector_table_0x1c            0x1c         Data  Gb  startup_TM4C1294.o [1]
+__write                       0xb81   0x10  Code  Gb  write.o [5]
+_call_main                    0xbdd         Code  Gb  cmain.o [4]
+_exit                         0xc09         Code  Gb  cexit.o [4]
+_main                         0xbeb         Code  Gb  cmain.o [4]
+exit                          0xc05    0x4  Code  Gb  exit.o [2]
+g_pppui32XTALtoVCO            0x614  0x1b0  Data  Lc  sysctl.o [3]
+g_pui32VCOFrequencies         0x60c    0x8  Data  Lc  sysctl.o [3]
+g_pui32Xtals                  0x95c   0x6c  Data  Lc  sysctl.o [3]
+g_sXTALtoMEMTIM               0xa58   0x30  Data  Lc  sysctl.o [3]
+main                          0xbf5   0x10  Code  Gb  main.o [1]
+out                           0x7c5   0x18  Code  Lc  xprintftiny.o [2]
+printf                        0xab5   0x28  Code  Gb  printf.o [2]
+putchar                       0xb61   0x20  Code  Gb  putchar.o [2]
+strlen                        0x8f9         Code  Gb  strlen.o [4]
+ttio_guard              0x2000'0008    0x1  Data  Lc  XShttio.o [2]
+
+
+[1] = C:\Users\Lucas\Downloads\EK-TM4C1294_IAR8\EK-TM4C1294_IAR8\Projects\Lab01_PWM\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+   2'558 bytes of readonly  code memory
+     634 bytes of readonly  data memory
+  32'781 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
